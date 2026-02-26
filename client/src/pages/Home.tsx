@@ -1,8 +1,8 @@
 import { NetworkBackground } from "@/components/NetworkBackground";
 import { AiEngineCard } from "@/components/AiEngineCard";
 import { Footer } from "@/components/Footer";
-import { Brain, ChevronRight, CheckCircle2, Sparkles, Globe, Cpu, Zap, Network } from "lucide-react";
-import { SiOpenai, SiGoogle, SiMicrosoft, SiX, SiAnthropic, SiPerplexity } from "react-icons/si";
+import { Brain, ChevronRight, CheckCircle2, Sparkles, Globe, Cpu, Zap, Network, Bot } from "lucide-react";
+import { SiOpenai, SiGoogle, SiX, SiAnthropic, SiPerplexity } from "react-icons/si";
 import { motion } from "framer-motion";
 import {
   Accordion,
@@ -15,7 +15,7 @@ const aiEngines = [
   { id: "chatgpt", name: "ChatGPT", icon: <SiOpenai />, colorClass: "from-emerald-500/20 to-teal-500/5", delay: 0.1 },
   { id: "claude", name: "Claude", icon: <SiAnthropic />, colorClass: "from-amber-500/20 to-orange-500/5", delay: 0.2 },
   { id: "grok", name: "Grok", icon: <SiX />, colorClass: "from-slate-500/20 to-gray-500/5", delay: 0.3 },
-  { id: "copilot", name: "MS Copilot", icon: <SiMicrosoft />, colorClass: "from-blue-500/20 to-cyan-500/5", delay: 0.4 },
+  { id: "copilot", name: "MS Copilot", icon: <Bot />, colorClass: "from-blue-500/20 to-cyan-500/5", delay: 0.4 },
   { id: "perplexity", name: "Perplexity", icon: <SiPerplexity />, colorClass: "from-cyan-500/20 to-blue-500/5", delay: 0.5 },
   { id: "gemini", name: "Gemini", icon: <SiGoogle />, colorClass: "from-purple-500/20 to-pink-500/5", delay: 0.6 },
   { id: "deepseek", name: "Deepseek", icon: <Network />, colorClass: "from-indigo-500/20 to-blue-500/5", delay: 0.7 },
