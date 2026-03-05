@@ -4,6 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Brain, ChevronRight, CheckCircle2, Sparkles, Globe, Cpu, Zap, Network, Bot } from "lucide-react";
 import { SiOpenai, SiGoogle, SiX, SiAnthropic, SiPerplexity } from "react-icons/si";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import {
   Accordion,
   AccordionContent,
@@ -48,9 +49,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background text-foreground selection:bg-cyan-500/30">
+
       {/* Navigation */}
       <nav className="fixed top-0 left-0 right-0 z-50 border-b border-white/5 bg-background/50 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+
           <div className="flex items-center gap-2">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
               <Brain className="w-6 h-6 text-white" />
@@ -59,13 +62,25 @@ export default function Home() {
               Ai Link Indexer
             </span>
           </div>
-          <button 
-            onClick={() => scrollTo('indexing')}
-            className="hidden md:flex px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 hover:border-cyan-400/50 hover:text-cyan-300 transition-all items-center gap-2 group"
-          >
-            Get Started
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </button>
+
+          <div className="flex items-center gap-4">
+
+            <Link href="/news">
+              <button className="px-6 py-2.5 rounded-full bg-cyan-500/10 border border-cyan-500/20 text-sm font-medium text-cyan-300 hover:bg-cyan-500/20 transition-all">
+                Newsletter
+              </button>
+            </Link>
+
+            <button 
+              onClick={() => scrollTo('indexing')}
+              className="hidden md:flex px-6 py-2.5 rounded-full bg-white/5 border border-white/10 text-sm font-medium hover:bg-white/10 hover:border-cyan-400/50 hover:text-cyan-300 transition-all items-center gap-2 group"
+            >
+              Get Started
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </button>
+
+          </div>
+
         </div>
       </nav>
 

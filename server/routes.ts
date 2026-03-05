@@ -8,7 +8,10 @@ export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
-  
+
+  // ===============================
+  // EXISTING CONTACT ROUTE
+  // ===============================
   app.post(api.contacts.create.path, async (req, res) => {
     try {
       const input = api.contacts.create.input.parse(req.body);
@@ -18,7 +21,7 @@ export async function registerRoutes(
       if (err instanceof z.ZodError) {
         return res.status(400).json({
           message: err.errors[0].message,
-          field: err.errors[0].path.join('.'),
+          field: err.errors[0].path.join("."),
         });
       }
       throw err;
