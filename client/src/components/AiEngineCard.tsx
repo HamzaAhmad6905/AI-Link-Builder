@@ -19,22 +19,12 @@ export function AiEngineCard({
   const { toast } = useToast();
   const [url, setUrl] = useState("");
   const [isFocused, setIsFocused] = useState(false);
-  const [submittedCount, setSubmittedCount] = useState(0);
   const [successGlow, setSuccessGlow] = useState(false);
-
-  useEffect(() => {
-    const saved = localStorage.getItem(`count-${name}`);
-    if (saved) setSubmittedCount(Number(saved));
-  }, [name]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
     if (!url.trim()) return;
-
-    const newCount = submittedCount + 1;
-    setSubmittedCount(newCount);
-    localStorage.setItem(`count-${name}`, newCount.toString());
 
     setSuccessGlow(true);
     setTimeout(() => setSuccessGlow(false), 1500);
@@ -101,11 +91,6 @@ export function AiEngineCard({
             </button>
           </div>
 
-          <div className="flex justify-center mt-4">
-            <span className="text-xs bg-white/10 px-3 py-1 rounded-full text-slate-300 font-medium">
-              {submittedCount} Submissions
-            </span>
-          </div>
         </form>
       </div>
     </motion.div>

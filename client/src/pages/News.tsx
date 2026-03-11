@@ -170,7 +170,13 @@ export default function News() {
               </h2>
 
               <p className="text-sm text-gray-400 mb-6">
-                {new Date(post.created_at).toLocaleDateString()}
+                {new Date(post.created_at).toLocaleString("en-GB", {
+                day: "2-digit",
+                month: "short",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit"
+               })}
               </p>
 
               {isAdmin && (

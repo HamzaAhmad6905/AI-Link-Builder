@@ -7,13 +7,14 @@ import NotFound from "@/pages/not-found";
 import Home from "./pages/Home";
 import Admin from "./pages/Admin";
 import News from "./pages/News"; // ✅ ADD THIS
-
+import NewsPost from "./pages/NewsPost";
 function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
       <Route path="/admin" component={Admin} />
       <Route path="/news" component={News} /> {/* ✅ ADD THIS */}
+      <Route path="/news/:slug" component={NewsPost} />
       <Route component={NotFound} />
     </Switch>
   );
